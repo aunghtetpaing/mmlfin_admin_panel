@@ -1,0 +1,229 @@
+<section class="content-wrapper">
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Header Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsHeader.dataUrl" src="{{ adsHeader.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsHeader.dataUrl && adsHeader.photo" src="{{ imagePath + adsHeader.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsHeader.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsHeader.isLoading" (click)="openImage(adsHeader)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsHeader.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsHeader.active" [(ngModel)]="adsHeader.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsHeader.isLoading" (click)="update('header', adsHeader)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Full With Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsFullWith.dataUrl" src="{{ adsFullWith.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsFullWith.dataUrl && adsFullWith.photo" src="{{ imagePath + adsFullWith.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsFullWith.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsFullWith.isLoading" (click)="openImage(adsFullWith)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsFullWith.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsFullWith.active" [(ngModel)]="adsFullWith.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsFullWith.isLoading" (click)="update('fullwith', adsFullWith)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Block Start Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsBlockStart.dataUrl" src="{{ adsBlockStart.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsBlockStart.dataUrl && adsBlockStart.photo" src="{{ imagePath + adsBlockStart.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsBlockStart.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsBlockStart.isLoading" (click)="openImage(adsBlockStart)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsBlockStart.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsBlockStart.active" [(ngModel)]="adsBlockStart.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsBlockStart.isLoading" (click)="update('block_start',adsBlockStart)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Block Middle Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsBlockMiddle.dataUrl" src="{{ adsBlockMiddle.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsBlockMiddle.dataUrl && adsBlockMiddle.photo" src="{{ imagePath + adsBlockMiddle.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsBlockMiddle.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsBlockMiddle.isLoading" (click)="openImage(adsBlockMiddle)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsBlockMiddle.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsBlockMiddle.active" [(ngModel)]="adsBlockMiddle.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsBlockMiddle.isLoading" (click)="update('block_middle',adsBlockMiddle)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Block End Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsBlockEnd.dataUrl" src="{{ adsBlockEnd.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsBlockEnd.dataUrl && adsBlockEnd.photo" src="{{ imagePath + adsBlockEnd.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsBlockEnd.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsBlockEnd.isLoading" (click)="openImage(adsBlockEnd)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsBlockEnd.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsBlockEnd.active" [(ngModel)]="adsBlockEnd.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsBlockEnd.isLoading" (click)="update('block_end',adsBlockEnd)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+              <mat-card-title> Side Ads </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <div class="fileupload-wrapper">
+                    <img class="preview-image" *ngIf="adsSide.dataUrl" src="{{ adsSide.dataUrl }}" />
+                    <img class="preview-image" *ngIf="!adsSide.dataUrl && adsSide.photo" src="{{ imagePath + adsSide.photo }}" />
+
+                    <mat-form-field>
+                        <input matInput disabled placeholder="Upload Image File" [(ngModel)]="adsSide.fileName">
+                    </mat-form-field>
+                    
+                    <button mat-raised-button color="primary" [disabled]="adsSide.isLoading" (click)="openImage(adsSide)">
+                        <mat-icon>file_upload</mat-icon>
+                    </button>
+                
+                    <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+                </div>
+
+                <div class="input-group">
+                    <mat-form-field>
+                        <input matInput placeholder="URL" [(ngModel)]="adsSide.link">
+                    </mat-form-field>
+
+                    <mat-slide-toggle color="primary" [checked]="adsSide.active" [(ngModel)]="adsSide.active"> Public </mat-slide-toggle>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button mat-raised-button color="primary" [disabled]="adsSide.isLoading" (click)="update('side',adsSide)"> Update </button>
+            </mat-card-actions>
+        </mat-card>
+    </section>
+</section>

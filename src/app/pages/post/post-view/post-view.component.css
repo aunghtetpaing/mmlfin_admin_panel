@@ -1,0 +1,56 @@
+.wrapper {
+    width: calc(100% - 30px);
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.edit-form {
+    width: 40%;
+}
+
+.fileupload-wrapper {
+    width: 100%;
+}
+
+.mat-form-filed-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mat-form-filed-wrapper > mat-form-field {
+    width: calc((100% / 3) - 15px);
+}
+
+.fileupload-wrapper > mat-form-field {
+    width: calc(100% - 100px);
+}
+
+.fileupload-wrapper > button {
+    width: 80px;
+    margin-left: 20px;
+}
+
+.preview-image {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.buttom-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.buttom-wrapper > button {
+    margin-left: 20px;
+}

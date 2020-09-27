@@ -1,0 +1,84 @@
+.content-wrapper {
+    width: calc(100% - 30px);
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.display-wrapper {
+    width: calc((100% /3 ) - 15px);
+    margin-top: 20px;
+}
+
+.slider-form {
+    width: calc( 100% - ((100% /3)));
+    margin-top: 20px;
+    padding-left: 15px;
+}
+
+.slider-table {
+    width: 100%;
+}
+
+.preview-image {
+    height: 200px;
+}
+
+.fileupload-wrapper, 
+.preview-image {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.buttom-wrapper {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-group > mat-form-field  {
+    padding-left: 15px;
+}
+
+.input-group > mat-form-field:first-child {
+    padding-left: 0px;
+}
+
+mat-card-title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card-title > span {
+    margin-top: 20px;
+}
+
+.label-click {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.label-click:hover {
+    text-decoration: underline;
+}
+.preview-image {
+    width: 100%;
+}

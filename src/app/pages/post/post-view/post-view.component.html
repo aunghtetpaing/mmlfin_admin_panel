@@ -1,0 +1,68 @@
+<mat-progress-bar mode="query" color="warn" *ngIf="isLoading"></mat-progress-bar>
+
+<section class="wrapper">
+    <section class="edit-form">
+        <section class="header"> <h3> Edit Post </h3> </section>
+    
+        <section class="create-form">
+            <mat-form-field>
+                <input matInput [(ngModel)]="post.title">
+            </mat-form-field>
+    
+            <div class="fileupload-wrapper">
+                <img class="preview-image" *ngIf="post.dataUrl !== ''" src="{{ post.dataUrl }}" />
+                <img class="preview-image" *ngIf="!post.dataUrl" src="{{ post.photo }}" (error)="imageFailed(post)" />
+                <mat-form-field>
+                    <input matInput disabled placeholder="Upload Image File" [(ngModel)]="post.fileName">
+                </mat-form-field>
+            
+                <button mat-raised-button color="primary" [disabled]="isLoading" (click)="openImage()">
+                    <mat-icon>file_upload</mat-icon>
+                </button>
+        
+                <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+            </div>
+    
+            <div class="mat-form-filed-wrapper">
+                <mat-form-field>
+                    <mat-label> Article Type </mat-label>
+                    <mat-select [(ngModel)]="post.article_type">
+                        <mat-option value="Livestock">Livestock</mat-option>
+                        <mat-option value="Fishery">Fishery</mat-option>
+                        <mat-option value="International">International</mat-option>
+                        <mat-option value="Agriculture">Agriculture</mat-option>
+                    </mat-select>
+                </mat-form-field>
+    
+                <mat-form-field>
+                    <mat-label> Language </mat-label>
+                    <mat-select [(ngModel)]="post.article_language">
+                        <mat-option value="Myanmar">Myanmar</mat-option>
+                        <mat-option value="English">English</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field color="primary">
+                    <input matInput [matDatepicker]="post_date" [(ngModel)]="post.post_date" placeholder="Post Date">
+                    <mat-datepicker-toggle matSuffix [for]="post_date"></mat-datepicker-toggle>
+                    <mat-datepicker #post_date color="primary"></mat-datepicker>
+                </mat-form-field>
+            </div>
+    
+            <mat-form-field>
+                <textarea matInput placeholder="Description" [(ngModel)]="post.description" class="desription"></textarea>
+            </mat-form-field>
+        
+            <div class="buttom-wrapper">
+                <button mat-raised-button color="primary" (click)="stripHtml(post.body)" [disabled]="isLoading"> ReFormat </button>
+            </div>
+
+            <quill-editor [(ngModel)]="post.body"></quill-editor>
+
+            <div class="buttom-wrapper">
+                <button mat-raised-button color="primary" (click)="stripHtml(post.body)" [disabled]="isLoading"> ReFormat </button>
+                <button mat-raised-button color="primary" (click)="update()" [disabled]="isLoading"> Update </button>
+            </div>
+        </section>
+    </section>
+</section>

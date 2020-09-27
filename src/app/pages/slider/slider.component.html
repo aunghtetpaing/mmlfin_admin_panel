@@ -1,0 +1,73 @@
+<mat-progress-bar mode="query" color="warn" *ngIf="isLoading"></mat-progress-bar>
+
+<section class="content-wrapper">
+    <section class="display-wrapper">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title> 
+                    <img class="preview-image" [src]="previewImage" *ngIf="previewImage" />
+                    <span> Slider Lists </span>
+                </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <table mat-table class="slider-table" [dataSource]="dataSource">
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Name </th>
+                      <td mat-cell *matCellDef="let element"> 
+                        <label class="label-click" (click)="preview(element.name)">{{ element.name }}  </label>
+                      </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="active">
+                      <th mat-header-cell *matHeaderCellDef> Publish </th>
+                      <td mat-cell *matCellDef="let element">
+                        <mat-slide-toggle color="primary" [checked]="element.active === 0 ? false: true" (change)="slideChange(element, $event)">
+                    </mat-slide-toggle>
+                      </td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="option">
+                      <th mat-header-cell *matHeaderCellDef> Option </th>
+                      <td mat-cell *matCellDef="let element">    
+                        <button mat-icon-button color="primary" (click)="toastConfirm(element)"> <mat-icon>restore_from_trash</mat-icon> </button>           
+                      </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+    </section>
+
+
+<section class="slider-form">
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title> Create New Slider </mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div class="fileupload-wrapper">
+                <img class="preview-image" *ngIf="slider.dataUrl" src="{{ slider.dataUrl }}" />
+
+                <mat-form-field>
+                    <input matInput disabled placeholder="Upload Image File" [(ngModel)]="slider.fileName">
+                </mat-form-field>
+                
+                <button mat-raised-button color="primary" [disabled]="slider.isLoading" (click)="openImage()">
+                    <mat-icon>file_upload</mat-icon>
+                </button>
+            
+                <input type="file" id="fileUpload" name="fileUpload" style="display:none;" />
+            </div>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="slider.isLoading" (click)="create()"> Create Slider </button>
+        </mat-card-actions>
+    </mat-card>
+</section>
+</section>
