@@ -4,7 +4,7 @@
 const baseUrl = 'https://webapi.mmlfin.com';
 
 export const environment = {
-  production: true,
+  production: false,
   url: baseUrl,
   imageUrl: `${baseUrl}/public/uploads`,
   defaultImage: 'photo-not-available.png'
